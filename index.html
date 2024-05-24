@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Restaurant</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <section>
+      <h3>Galeria d'imatges</h3>
+      <div class="gallery">
+        <div class="image-container">
+          <img src="IMAGES/editplat1.jpg" alt="Imatge plat de verdures" />
+        </div>
+        <div class="image-container">
+          <img src="IMAGES/editplat2.jpg" alt="Imatge plat despaguettis" />
+        </div>
+        <div class="image-container">
+          <img
+            src="IMAGES/editplat3.jpg"
+            alt="Imatge plat de salmó amb verdures"
+          />
+        </div>
+      </div>
+      <div class="imgResponsive">
+        <picture>
+          <source
+            media="(max-width:1064px)"
+            srcset="IMAGES\img_responsive1064.gif"
+          />
+          <source
+            media="(max-width:640px)"
+            srcset="IMAGES\img_responsive640.gif"
+          />
+          <img
+            src="/IMAGES/img_responsive2.gif"
+            alt="una imagen de un restaurante"
+          />
+        </picture>
+      </div>
+      <div class="css_div">ª</div>
+      <div id="vid">
+        <video id="video" autoplay muted loop>
+          <source src="/VIDEOS/video.mp4" type="video/mp4" /></video
+        ><button id="play" onclick="start()">
+          <span class="material-symbols-outlined"> play_arrow </span>
+        </button>
+        <button id="pause" onclick="paused()">
+          <span class="material-symbols-outlined"> pause </span>
+        </button>
+      </div>
+    </section>
+    <script>
+      var video = document.getElementById("video");
+      var play = document.getElementById("play");
+      var pause = document.getElementById("pause");
+
+      window.onscroll = function () {
+        autoPause();
+      };
+      function autoPause() {
+        if (
+          window.innerHeight + window.pageYOffset >=
+          document.body.offsetHeight
+        ) {
+          video.pause();
+        }
+      }
+      function start() {
+        if (video.paused) {
+          video.play();
+        } else {
+          alert("El vídeo s'està reproduint");
+        }
+      }
+      function paused() {
+        if (!video.paused) {
+          video.pause();
+        } else {
+          alert("El vídeo està parat");
+        }
+      }
+    </script>
+  </body>
+</html>
